@@ -5,7 +5,6 @@
 * @instructor Dr Recep Ulusoy
 * @date 20.08.2016
 */
-
 package datamanagement;
 
 /** Importing classes for the code */
