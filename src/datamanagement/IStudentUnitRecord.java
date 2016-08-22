@@ -1,5 +1,18 @@
+/** Specify the package in which the class resides */
 package datamanagement;
 
+/**
+*@reviewer Jean Claude Jino Rousseau
+*@course Master of Information Technology
+*@subject Professional Programming Practice
+*@lecturer Dr Recep Ulusoy
+*@due date 26.08.2016
+*@version 1.2
+*
+*The IStudent IStudentLister .......
+*/
+
+/** Start of the IStudentUnitRecord interface */
 public interface IStudentUnitRecord {
 
     public Integer getStudentID();
@@ -15,4 +28,4 @@ public interface IStudentUnitRecord {
     public float getExam();
 
     public float getTotal();
-}
+} // End of IStudentUnitRecord interface

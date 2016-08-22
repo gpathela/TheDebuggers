@@ -1,5 +1,18 @@
+/** Specify the package in which the class resides */
 package datamanagement;
 
+/**
+*@reviewer Jean Claude Jino Rousseau
+*@course Master of Information Technology
+*@subject Professional Programming Practice
+*@lecturer Dr Recep Ulusoy
+*@due date 26.08.2016
+*@version 1.2
+*
+*The IStudent interface .......
+*/
+
+/** Start of the IStudent interface */
 public interface IStudent {
 
     public Integer getID();
@@ -14,5 +27,4 @@ public interface IStudent {
     public IStudentUnitRecord getUnitRecord( String unitCode );
 
     public StudentUnitRecordList getUnitRecords();
-
-}
+} // End of the IStudent interface 

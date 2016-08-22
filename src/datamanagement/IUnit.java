@@ -1,5 +1,18 @@
+/** Specify the package in which the class resides */
 package datamanagement;
 
+/**
+*@reviewer Jean Claude Jino Rousseau
+*@course Master of Information Technology
+*@subject Professional Programming Practice
+*@lecturer Dr Recep Ulusoy
+*@due date 26.08.2016
+*@version 1.2
+*
+*The IUnit IStudentLister .......
+*/
+
+/** Start of the IUnit interface */
 public interface IUnit {
 
     public String getUnitCode();
@@ -31,4 +44,4 @@ public interface IUnit {
     public IStudentUnitRecord getStudentRecord(int studentID );
     
     public StudentUnitRecordList listStudentRecords();
-}
+} // End of IUnit interface

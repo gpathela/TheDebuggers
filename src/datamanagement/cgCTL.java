@@ -1,14 +1,22 @@
 /** Displaying the package in which the class resides */
 package datamanagement;
+
 /**
-* This class allows the instantiation of CgCtl objects
-* which can invoke the following methods:
+*@reviewer Jean Claude Jino Rousseau
+*@course Master of Information Technology
+*@subject Professional Programming Practice
+*@lecturer Dr Recep Ulusoy
+*@due date 26.08.2016
+*@version 1.3
+*
+* The class cgCTL was renamed to CgCtl to comply to the Java conventions.
+* It allows the instantiation of CgCtl objects which can invoke the following methods:
 * execute, unitSelected, studentSelected, checkGrade, enableChangeMarks, and saveGrade.
 */
 
-/** Start of the class CgCtl. The class name should start with a capital letter. 
-	Following the Java convention, the desired class name would be as follows CgCtl */
+/** Start of the class CgCtl */
 public class CgCtl {
+	/** Declare and initialize the variable for the class */
 	CgUI cgUI; // Declare the object named CGUI of type cgUI 
 	String cuc = null; // Declare and initialize the variable cuc to null 
 	Integer currentStudentID = null; // Declare and initialize the variable currentStudentID to null 
@@ -18,7 +26,9 @@ public class CgCtl {
 	public CgCtl(){
 	}
 
-	/** Start of the method execute..... */
+	/** Start of the method execute which creates a new object of type CgUI
+		and sets it to different states. It then creates an action event object 
+		which is used to invoke some methods */
 	public void execute() {
 		cgUI = new CgUI(this);
 		cgUI.setState1(false);
@@ -34,11 +44,13 @@ public class CgCtl {
 		cgUI.setState1(true);
 	} // End of the method execute 
 
-	/** The method unitSelected.....*/
+	/** The method unitSelected  selects a unit under certain conditions.
+		It then invokes a method to listthe units based on the list of 
+		students in relation to their code */
 	public void unitSelected(String code) {
-		if (code.equals("NONE"))
+		if(code.equals("NONE"))
 			cgUI.setState2(false);
-		else {
+		else{
 			ListStudentsCTL lsCTL = new ListStudentsCTL();
 			lsCTL.listStudents(cgUI, code);
 			cuc = code;
@@ -47,7 +59,8 @@ public class CgCtl {
 		cgUI.setState3(false);
 	} // End of the method unitSelected
 
-	/** Start of the method studentSelected....*/
+	/** Start of the method studentSelected which select the current studentSelected
+		based on their ID under some conditions. */
 	public void studentSelected(Integer id) {
 		currentStudentID = id;
 		if (currentStudentID.intValue() == 0) {
@@ -69,19 +82,20 @@ public class CgCtl {
 		}
 	} // End of the method studentSelected
 
-	/** Start of the checkGrade method */
+	/** Start of the checkGrade method which returns a message of type string
+		when the grade of a student is checked */
 	public String checkGrade(float f, float g, float h) {
 		IUnit u = UnitManager.UM().getUnit(cuc);
 		String s = u.getGrade(f, g, h);
 		cgUI.setState4(true);
 		cgUI.setState5(false);
-		if (changed) {
+		if(changed){
 			cgUI.setState6(true);
 		}
 		return s;
 	} // End of the checkGrade method 
 
-	/** Start of the method enableChangeMarks....*/
+	/** Start of the method enableChangeMarks allows the user to change the marks of a student */
 	public void enableChangeMarks() {
 		cgUI.setState4(false);
 		cgUI.setState6(false);
@@ -89,7 +103,7 @@ public class CgCtl {
 		changed = true;
 	} // End of the method enableChangeMarks
 
-	/** Start of the method saveGrade....*/
+	/** Start of the method saveGrade which allows the user to save the grade of a student */
 	public void saveGrade(float asg1, float asg2, float exam) {
 		IUnit u = UnitManager.UM().getUnit(cuc);
 		IStudent s = StudentManager.get().getStudent(currentStudentID);

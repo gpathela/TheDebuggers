@@ -2,6 +2,7 @@
 package datamanagement;
 import java.util.*;
 import java.io.*;
+
 /**
 *@reviewer Jean Claude Jino Rousseau
 *@course Master of Information Technology
@@ -17,7 +18,7 @@ import java.io.*;
 
 /** Start of the class AppProperties */
 public class AppProperties{
-	/** Declaring and initialize the variable for the class
+	/** Declare and initialize the variable for the class
 		with private visibility */
 	private static AppProperties self = null; // Declare and initialize the variable self to null 
 	private Properties properties;
