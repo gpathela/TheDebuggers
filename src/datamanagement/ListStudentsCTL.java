@@ -1,11 +1,16 @@
-/** 
-* @author Ramanpreet Kaur
+/** Specify the package in which the class resides */
+package datamanagement;
+
+/**
+* @reviewer Ramanpreet Kaur
 * @course Master of Information Technology
 * @subject Professional Programming Practice
 * @instructor Dr Recep Ulusoy
-* @date 20.08.2016
+* @due date 26.08.2016
+* @version 1.2
+* The ListStudentsCtl class is a program that uses private variables to create instances
+* with a no-arg constructor.
 */
-package datamanagement;
 
 /** change class name from ListStudentsCTL to ListStudentsCtl 
 * as abbreviations and acronyms should not be uppercase
@@ -15,11 +20,12 @@ public class ListStudentsCtl {		//Start of the class
   /** Construst a default ListStudentsCtl object*/
   public ListStudentsCtl() {
 	  sm = StudentManager.get();
-	  }
+	  }// End of the no-arg constructor
+	  
   public void listStudents(IStudentLister lister, String unitCode) {
       lister.clearStudents();
       StudentMap students = sm.getStudentsByUnit( unitCode );
       for (Integer id : students.keySet()) 
 	  lister.addStudent(students.get(id));
       }
-}//End of the class
+}//End of the class ListStudentsCtl
