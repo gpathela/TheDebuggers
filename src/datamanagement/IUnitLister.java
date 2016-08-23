@@ -1,17 +1,22 @@
+/** Specify the package in which the class resides */
+package datamanagement;
+
 /**
-* @author Ramanpreet Kaur
+* @reviewer Ramanpreet Kaur
 * @course Master of Information Technology
 * @subject Professional Programming Practice
 * @instructor Dr Recep Ulusoy
-* @date 20.08.2016
+* @due date 26.08.2016
+* @version 1.2
+* 
+* The IUnitLister Interface
+*
 */
 
-package datamanagement;
-
-//Start of interface
+//Start of IUnitLister interface
 public interface IUnitLister {
 
     public void clearUnits();		//implicitly abstract method
     public void addUnit(IUnit unit);	//implicitly abstract method
 
-}//End of interface
+}//End of IUnitLister interface
