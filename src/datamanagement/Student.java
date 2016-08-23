@@ -1,11 +1,17 @@
-/** 
-* @author Ramanpreet Kaur
+/** Specify the package in which the class resides */
+package datamanagement;
+
+/**
+* @reviewer Ramanpreet Kaur
 * @course Master of Information Technology
 * @subject Professional Programming Practice
 * @instructor Dr Recep Ulusoy
-* @date 20.08.2016
+* @due date 26.08.2016
+* @version 1.2
+* 
+* The Student class
+*
 */
-package datamanagement;
 
 public class Student implements IStudent {
     private int id; 	// change datatype from Integer to int
@@ -63,4 +69,4 @@ public class Student implements IStudent {
 	public StudentUnitRecordList getUnitRecords(){ 
 		return su; 
 	}
-}
+}//End of student class
