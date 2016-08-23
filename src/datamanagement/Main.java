@@ -1,11 +1,14 @@
-/** 
-* @author Ramanpreet Kaur
+/** Specify the package in which the class resides */
+package datamanagement;
+
+/**
+* @reviewer Ramanpreet Kaur
 * @course Master of Information Technology
 * @subject Professional Programming Practice
 * @instructor Dr Recep Ulusoy
-* @date 20.08.2016
+* @due date 26.08.2016
+* @version 1.2
 */
-package datamanagement;
 
 /** Start of the class*/
 public class Main {
