@@ -1,19 +1,25 @@
-/** 
-* @author Ramanpreet Kaur
+/** Specify the package in which the class resides */
+package datamanagement;
+
+/**
+* @reviewer Ramanpreet Kaur
 * @course Master of Information Technology
 * @subject Professional Programming Practice
 * @instructor Dr Recep Ulusoy
-* @date 20.08.2016
+* @due date 26.08.2016
+* @version 1.2
 */
-package datamanagement;
 
-/** Importing classes for the code */
+
+/** Import some Java libraries and specify the package in which the class resides */
 import org.jdom.*;
 import java.util.List;
 
 /** Start of the class*/
 public class StudentManager{
-    private static StudentManager self = null;
+	/** Declare and initialize the variable for the class
+		with private visibility */
+    private static StudentManager self = null; // Declare and initialize the variable self to null 
 	private StudentMap sm;
 	private java.util.HashMap<String, StudentMap> um;
 	
@@ -22,10 +28,13 @@ public class StudentManager{
         self = new StudentManager(); 
 			return self; 
 	}
+	
+	/** The no-args constructor is used to create an object of an StudentManager */
 	private StudentManager(){
 		sm = new StudentMap();
         um = new java.util.HashMap<>();
-	}
+	}// End of the no-arg constructor
+	
     public IStudent getStudent(Integer id){
 		IStudent is = sm.get(id);
 			return is != null ? is : createStudent(id);
