@@ -15,6 +15,6 @@ package datamanagement;
 
 /** Start of the interface IUnitLister */
 public interface IUnitLister {
-    public void clearUnits();
-    public void addUnit(IUnit unit);
+    public void clearUnits(); // Clear all the units 
+    public void addUnit(IUnit unit); // Add a unit object 
 } // End of the interface IUnitLister

@@ -9,8 +9,8 @@ package datamanagement;
 *@due date 26.08.2016
 *@version 1.3
 *
-*The IStudentUnitRecord contains a collection of abstract methods 
-*to allow other class to implement them. These methods make the following
+*The IStudentUnitRecord contains a collection of abstract methods to allow
+*other classes to implement them. These methods get and set the following
 *student attributes: ID, unit code, the marks for assignment 1, 2, and 3, 
 *the exam marks and the total of all the marks by using their getter methods.    
 */

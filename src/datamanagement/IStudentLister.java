@@ -10,7 +10,7 @@ package datamanagement;
 *@version 1.3
 *
 *The IStudentLister contains a collection of abstract methods 
-*to allow other class to implement them. These methods can clear  
+*to allow other classes to implement them. These methods can clear  
 *or add student objects to a list. 
 */ 
  
