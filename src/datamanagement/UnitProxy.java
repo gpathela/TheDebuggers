@@ -10,7 +10,7 @@ package datamanagement;
  * @version 1.3
  * 
  *          UnitProxy class implements IUnit . The main purpose of class is to
- *          get and set unitCode and unitNmes. Appart fro that it is also being
+ *          get and set unitCode and unitNames. Appart from that it is also being
  *          used for get and set cutoff for each grade. It aslo set weightage
  *          for assesments items.
  *
