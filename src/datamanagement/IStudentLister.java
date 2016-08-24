@@ -7,13 +7,15 @@ package datamanagement;
 *@subject Professional Programming Practice
 *@lecturer Dr Recep Ulusoy
 *@due date 26.08.2016
-*@version 1.2
+*@version 1.3
 *
-*The IStudent IStudentLister .......
+*The IStudentLister contains a collection of abstract methods 
+*to allow other class to implement them. These methods can clear  
+*or add student objects to a list. 
 */ 
  
 /** Start of the IStudentLister interface */
 public interface IStudentLister{
-    public void clearStudents();
-    public void addStudent(IStudent student);
+    public void clearStudents(); // Clear student from the list 
+    public void addStudent(IStudent student); // Add IStudent objects to the list 
 } // End of the IStudentLister interface 
