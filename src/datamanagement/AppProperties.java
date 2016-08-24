@@ -9,7 +9,7 @@ import java.io.*;
 *@subject Professional Programming Practice
 *@lecturer Dr Recep Ulusoy
 *@due date 26.08.2016
-*@version 1.2
+*@version 1.3
 *
 *The AppProperties class is a program that uses private variables to create instances
 *with a no-arg constructor. It has two methods, namely the getInstance, and getProperties
@@ -19,12 +19,13 @@ import java.io.*;
 /** Start of the class AppProperties */
 public class AppProperties{
 	/** Declare and initialize the variable for the class
-		with private visibility */
+		with private visibility modifiers */
 	private static AppProperties self = null; // Declare and initialize the variable self to null 
 	private Properties properties;
 
-	/** The no-args constructor which contains  a try and catch
-		method, is used to create an object of an AppProperties */
+	/** The no-args constructor, which contains  a try and catch
+		method, is used to create an instance of an AppProperties 
+		which loads the file "Properties.prop" */
 	private AppProperties(){
 		properties = new Properties();
 		try{
@@ -43,7 +44,7 @@ public class AppProperties{
 		return self;
 	} // End of the getInstance method 
 
-	/** The getProperties method returns the properties of an object of AppProperties*/
+	/** The getProperties method returns the properties of an instance of AppProperties*/
 	public Properties getProperties(){
 		return properties;
 	} // End of the getProperties method 

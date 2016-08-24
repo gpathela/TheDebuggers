@@ -9,18 +9,18 @@ package datamanagement;
 *@due date 26.08.2016
 *@version 1.3
 *
-* The class cgCTL was renamed to CgCtl to comply to the Java conventions.
+* The class cgCTL, originally, was renamed to CgCtl to comply to the Java conventions.
 * It allows the instantiation of CgCtl objects which can invoke the following methods:
-* execute, unitSelected, studentSelected, checkGrade, enableChangeMarks, and saveGrade.
+* execute(), unitSelected(), studentSelected(), checkGrade(), enableChangeMarks(), and saveGrade().
 */
 
 /** Start of the class CgCtl */
 public class CgCtl {
 	/** Declare and initialize the variable for the class */
-	CgUI cgUI; // Declare the object named CGUI of type cgUI 
+	CgUI cgUI; // Declare the variable named cgUI of type CgUI 
 	String cuc = null; // Declare and initialize the variable cuc to null 
-	Integer currentStudentID = null; // Declare and initialize the variable currentStudentID to null 
-	boolean changed = false; // Declare and initialize the variable changed to false 
+	Integer currentStudentID = null; // Declare and initialize the variable currentStudentID of type Integer to null 
+	boolean changed = false; // Declare and initialize the variable changed, of type boolean, to false 
 
 	/** The no-args constructor for an object CgCtl */
 	public CgCtl(){
@@ -37,18 +37,18 @@ public class CgCtl {
 		cgUI.setState4(false);
 		cgUI.setState5(false);
 		cgUI.setState6(false);
-		cgUI.Refresh3();
-		ListUnitsCTL luCTL = new ListUnitsCTL();
-		luCTL.listUnits(cgUI);
-		cgUI.setVisible(true);
-		cgUI.setState1(true);
+		cgUI.Refresh3(); // Refresh the object cgUI
+		ListUnitsCTL luCTL = new ListUnitsCTL(); // Declare the variable luCTL of type ListUnitsCTL
+		luCTL.listUnits(cgUI); // The variable luCTL invokes the method listUnits with a parameter of cgUI
+		cgUI.setVisible(true); // Set cgUI to visible
+		cgUI.setState1(true); // Set the state1 of cgUI to true 
 	} // End of the method execute 
 
 	/** The method unitSelected  selects a unit under certain conditions.
-		It then invokes a method to listthe units based on the list of 
+		It then invokes a method to list the units based on the list of 
 		students in relation to their code */
 	public void unitSelected(String code) {
-		if(code.equals("NONE"))
+		if(code.equals("NONE")) // Test the condition that the code is non existant
 			cgUI.setState2(false);
 		else{
 			ListStudentsCTL lsCTL = new ListStudentsCTL();
@@ -59,7 +59,7 @@ public class CgCtl {
 		cgUI.setState3(false);
 	} // End of the method unitSelected
 
-	/** Start of the method studentSelected which select the current studentSelected
+	/** Start of the method studentSelected which selects the current studentSelected
 		based on their ID under some conditions. */
 	public void studentSelected(Integer id) {
 		currentStudentID = id;
@@ -95,7 +95,7 @@ public class CgCtl {
 		return s;
 	} // End of the checkGrade method 
 
-	/** Start of the method enableChangeMarks allows the user to change the marks of a student */
+	/** Start of the method enableChangeMarks which allows the user to change the marks of a student */
 	public void enableChangeMarks() {
 		cgUI.setState4(false);
 		cgUI.setState6(false);
@@ -103,7 +103,8 @@ public class CgCtl {
 		changed = true;
 	} // End of the method enableChangeMarks
 
-	/** Start of the method saveGrade which allows the user to save the grade of a student */
+	/** Start of the method saveGrade which allows the user to save the grade of a student based on a 
+		parameter of variables of type float */
 	public void saveGrade(float asg1, float asg2, float exam) {
 		IUnit u = UnitManager.UM().getUnit(cuc);
 		IStudent s = StudentManager.get().getStudent(currentStudentID);
@@ -116,4 +117,4 @@ public class CgCtl {
 		cgUI.setState5(false);
 		cgUI.setState6(false);
 	} // End of the method saveGrade
-} // End of the class cgCTL 
+} // End of the class CgCTL 
