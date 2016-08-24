@@ -17,7 +17,8 @@ import org.jdom.JDOMException;
  * @due date 26.08.2016
  * @version 1.3
  * 
- *          XmlManager Class
+ *          XmlManager Class is a program to get and save Documents and using
+ *          Xml Manager.
  *
  */
 
