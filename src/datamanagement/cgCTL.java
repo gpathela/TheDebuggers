@@ -95,7 +95,8 @@ public class CgCtl {
 		return s;
 	} // End of the checkGrade method 
 
-	/** Start of the method enableChangeMarks which allows the user to change the marks of a student */
+	/** Start of the method enableChangeMarks which allows the user to change the marks
+		of a student using an instance of the class CgUI */
 	public void enableChangeMarks() {
 		cgUI.setState4(false);
 		cgUI.setState6(false);
