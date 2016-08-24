@@ -1,13 +1,14 @@
-/** Specify the package in which the class resides */
+/** Specify the package in which the classes are organized */
 package datamanagement;
 
 /**
-* @reviewer Ramanpreet Kaur
+* @author Ramanpreet Kaur
 * @course Master of Information Technology
 * @subject Professional Programming Practice
 * @instructor Dr Recep Ulusoy
 * @due date 26.08.2016
-* @version 1.2
+* @version 1.3
+*
 * The ListStudentsCtl class is a program that uses private variables to create instances
 * with a no-arg constructor.
 */
@@ -15,7 +16,7 @@ package datamanagement;
 /** change class name from ListStudentsCTL to ListStudentsCtl 
 * as abbreviations and acronyms should not be uppercase
 */
-public class ListStudentsCtl {		//Start of the class
+public class ListStudentsCtl {		//Start of the class ListStudentsCtl
   private StudentManager sm;		
   /** Construst a default ListStudentsCtl object*/
   public ListStudentsCtl() {

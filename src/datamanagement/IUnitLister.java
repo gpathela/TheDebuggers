@@ -1,22 +1,24 @@
-/** Specify the package in which the class resides */
+/** Specify the package in which the classes are organized */
 package datamanagement;
 
 /**
-* @reviewer Ramanpreet Kaur
+* @author Ramanpreet Kaur
 * @course Master of Information Technology
 * @subject Professional Programming Practice
 * @instructor Dr Recep Ulusoy
 * @due date 26.08.2016
-* @version 1.2
+* @version 1.3
 * 
-* The IUnitLister Interface
+* The IUnitLister Interface contains a collection of abstract methods 
+* to allow other classes to implement them. These methods can clear  
+* or add student objects to a list. 
 *
 */
 
 //Start of IUnitLister interface
 public interface IUnitLister {
 
-    public void clearUnits();		//implicitly abstract method
-    public void addUnit(IUnit unit);	//implicitly abstract method
+    public void clearUnits();		//Clear units from the list
+    public void addUnit(IUnit unit);	//Add IUnit objects to the list 
 
 }//End of IUnitLister interface

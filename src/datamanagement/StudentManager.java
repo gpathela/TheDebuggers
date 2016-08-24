@@ -1,21 +1,19 @@
-/** Specify the package in which the class resides */
+/** Import some Java libraries and specify the package in which the classes are organized */
 package datamanagement;
+import org.jdom.*;
+import java.util.List;
 
 /**
-* @reviewer Ramanpreet Kaur
+* @author Ramanpreet Kaur
 * @course Master of Information Technology
 * @subject Professional Programming Practice
 * @instructor Dr Recep Ulusoy
 * @due date 26.08.2016
-* @version 1.2
+* @version 1.3
 */
 
 
-/** Import some Java libraries and specify the package in which the class resides */
-import org.jdom.*;
-import java.util.List;
-
-/** Start of the class*/
+/** Start of the class StudentManager*/
 public class StudentManager{
 	/** Declare and initialize the variable for the class
 		with private visibility */
@@ -23,11 +21,12 @@ public class StudentManager{
 	private StudentMap sm;
 	private java.util.HashMap<String, StudentMap> um;
 	
+	/** An instance of the StudentManager class can use the get method to return itself */
 	public static StudentManager get(){
         if (self == null)
         self = new StudentManager(); 
 			return self; 
-	}
+	}//End of the get method
 	
 	/** The no-args constructor is used to create an object of an StudentManager */
 	private StudentManager(){
@@ -79,4 +78,4 @@ public class StudentManager{
 		um.put( uc, s);
 			return s;
 	}
-}//End of the class
+}//End of the class StudentManager

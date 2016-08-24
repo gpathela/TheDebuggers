@@ -1,22 +1,22 @@
-/** Specify the package in which the class resides */
+/** Specify the package in which the classes are organized */
 package datamanagement;
 
 /**
-* @reviewer Ramanpreet Kaur
+* @author Ramanpreet Kaur
 * @course Master of Information Technology
 * @subject Professional Programming Practice
 * @instructor Dr Recep Ulusoy
 * @due date 26.08.2016
-* @version 1.2
+* @version 1.3
 * 
-* The Student class
 *
+* Start of Student class
 */
 
-public class Student implements IStudent {
+public class Student implements IStudent { // The student class implements IStudent
     private int id; 	// change datatype from Integer to int
-	private String fn;
-    private String ln;
+	private String fn; //Declare First name to be an integer variable
+    private String ln; // Declare Last name to be an integer variable
 	private StudentUnitRecordList su;
 	
 	/** Construct an Student object with the specified attribute. */
@@ -28,7 +28,7 @@ public class Student implements IStudent {
 	}
 	
 	/** Return ID */
-    public int getID(){ 
+    public int getID(){ // Get the ID of a student
 		return this.id; 
 	} 
 	

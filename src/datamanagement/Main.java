@@ -1,13 +1,13 @@
-/** Specify the package in which the class resides */
+/** Specify the package in which the classes are organized */
 package datamanagement;
 
 /**
-* @reviewer Ramanpreet Kaur
+* @author Ramanpreet Kaur
 * @course Master of Information Technology
 * @subject Professional Programming Practice
 * @instructor Dr Recep Ulusoy
 * @due date 26.08.2016
-* @version 1.2
+* @version 1.3
 */
 
 /** Start of the class*/
