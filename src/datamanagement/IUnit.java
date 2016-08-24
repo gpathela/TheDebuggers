@@ -19,19 +19,19 @@ public interface IUnit {
     public String getUnitName();
 
     public float getPsCutoff();
-    public void  setPsCutoff1(float cutoff);
+    public void setPsCutoff1(float cutoff);
 
     public float getCrCutoff();
-    public void  setCrCutoff(float cutoff);
+    public void setCrCutoff(float cutoff);
 
     public float getDiCuttoff();    
-    public void  setDiCutoff(float cutoff);
+    public void setDiCutoff(float cutoff);
 
     public float getHdCutoff();
-    public void  setHdCutoff(float cutoff);    
+    public void setHdCutoff(float cutoff);    
 
     public float getAeCutoff();    
-    public void  setAeCutoff(float cutoff);
+    public void setAeCutoff(float cutoff);
     
     public int getAsg1Weight();
     public int getAsg2Weight();
