@@ -1,4 +1,4 @@
-/** Import some Java libraries and specify the package in which the class resides */
+/** Import some Java libraries and specify the package in which the classes are organized */
 package datamanagement;
 import javax.swing.JLabel;
 import javax.swing.GroupLayout.Alignment;
@@ -10,7 +10,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 /**
-*@reviewer Jean Claude Jino Rousseau
+*@author Jean Claude Jino Rousseau
 *@course Master of Information Technology
 *@subject Professional Programming Practice
 *@lecturer Dr Recep Ulusoy

@@ -1,8 +1,8 @@
-/** Specify the package in which the class resides */
+/** Specify the package in which the classes are organized */
 package datamanagement;
 
 /**
-*@reviewer Jean Claude Jino Rousseau
+*@author Jean Claude Jino Rousseau
 *@course Master of Information Technology
 *@subject Professional Programming Practice
 *@lecturer Dr Recep Ulusoy
