@@ -1,4 +1,4 @@
-/** Specify the package in which the classes are organized */
+/** Specify the package in which the classes resides */
 package datamanagement;
 
 /**

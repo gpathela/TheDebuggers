@@ -1,4 +1,4 @@
-/** Specify the package in which the classes are organized */
+/** Specify the package in which the classes resides */
 package datamanagement;
 
 /**
@@ -10,7 +10,7 @@ package datamanagement;
 * @version 1.3
 * 
 *
-* Start of Student class
+* Start of Student class. The main purpose of this class is to get or set the name, ID and unit record of the student.
 */
 
 public class Student implements IStudent { // The student class implements IStudent

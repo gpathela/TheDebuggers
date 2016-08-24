@@ -1,4 +1,4 @@
-/** Import some Java libraries and specify the package in which the classes are organized */
+/** Import some Java libraries and specify the package in which the classes resides */
 package datamanagement;
 import org.jdom.*;
 import java.util.List;
