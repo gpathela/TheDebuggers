@@ -13,7 +13,7 @@ package datamanagement;
 /** Start of the class*/
 public class Main {
 	/** Start of the main method */
-    public static void main(String[] p){
-	  new cgCTL().execute();
+    public static void main(String[] arg){
+	  new cgCtl().execute();		//Change the method name from cgCTL to cgCtl
 	}// End of the main method   
 }//End of the class

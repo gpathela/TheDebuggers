@@ -17,16 +17,16 @@ package datamanagement;
 * as abbreviations and acronyms should not be uppercase
 */
 public class ListStudentsCtl {		//Start of the class ListStudentsCtl
-  private StudentManager sm;		
+  private StudentManager studentManager_;	// Private variables of class	
   /** Construst a default ListStudentsCtl object*/
   public ListStudentsCtl() {
-	  sm = StudentManager.get();
+	  studentManager_ = StudentManager.get();
 	  }// End of the no-arg constructor
 	  
-  public void listStudents(IStudentLister lister, String unitCode) {
-      lister.clearStudents();
-      StudentMap students = sm.getStudentsByUnit( unitCode );
+  public void listStudents(IStudentLister studentLister, String unitCode) {
+      studentLister.clearStudents();
+      StudentMap students = studentManager_.getStudentsByUnit( unitCode );
       for (Integer id : students.keySet()) 
-	  lister.addStudent(students.get(id));
+	  studentLister.addStudent(students.get(id));
       }
 }//End of the class ListStudentsCtl

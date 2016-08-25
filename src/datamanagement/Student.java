@@ -15,16 +15,16 @@ package datamanagement;
 
 public class Student implements IStudent { // The student class implements IStudent
     private int id; 	// change datatype from Integer to int
-	private String fn; //Declare First name to be an integer variable
-    private String ln; // Declare Last name to be an integer variable
-	private StudentUnitRecordList su;
+	private String firstName; //Declare First name to be an integer variable
+    private String lastName; // Declare Last name to be an integer variable
+	private StudentUnitRecordList studentUnit;
 	
 	/** Construct an Student object with the specified attribute. */
-	public Student(int id, String fn, String ln, StudentUnitRecordList su ){
+	public Student(int id, String firstName, String lastName, StudentUnitRecordList studentUnit ){
 		this.id = id; 
-		this.fn = fn;
-        this.ln = ln;
-		this.su == null ? new StudentUnitRecordList() : su;
+		this.firstName = firstName;
+        this.lastName = lastName;
+		this.studentUnit == null ? new StudentUnitRecordList() : studentUnit;
 	}
 	
 	/** Return ID */
@@ -34,31 +34,31 @@ public class Student implements IStudent { // The student class implements IStud
 	
 	/** Return First Name */
 	public String getFirstName() { 
-		return fn; 
+		return firstName; 
 	}
 
 	/** Set a new First Name */
     public void setFirstName(String firstName){ 
-		this.fn = firstName;
+		this.firstName = firstName;
 	}
 	
 	/** Return Last Name */
 	public String getLastName(){ 
-		return ln; 
+		return lastName; 
 	}
 	
 	/** Set a new Last Name */
     public void setLastName(String lastName){ 
-		this.ln = lastName;
+		this.lastName = lastName;
 	}
 
 	/** Set a new unit record*/
 	public void addUnitRecord(IStudentUnitRecord record){
-		su.add(record); 
+		studentUnit.add(record); 
 	}
 	
     public IStudentUnitRecord getUnitRecord(String unitCode){
-		for (IStudentUnitRecord r : su) 
+		for (IStudentUnitRecord r : studentUnit) 
 			if ( r.getUnitCode().equals(unitCode)) 
 				return r; 
 
@@ -67,6 +67,6 @@ public class Student implements IStudent { // The student class implements IStud
 	}
 
 	public StudentUnitRecordList getUnitRecords(){ 
-		return su; 
+		return studentUnit; 
 	}
 }//End of student class
