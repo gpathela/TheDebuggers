@@ -14,7 +14,7 @@ package datamanagement;
  */
 
 /*
-*
+*StudentProxy implements IStudent
 */
 
 public class StudentProxy implements IStudent { //StudentProxy implementing IStudent
