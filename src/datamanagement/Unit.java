@@ -19,147 +19,137 @@ package datamanagement;
 // Start of Unit Class
 
 public class Unit implements IUnit {
-	private String unitCode_; // Private variables of class
-	private String unitName_;
-	private float psCutoff_;
-	private float crCutoff_;
-	private float diCutoff_;
-	private float hdCutoff_;
-	private float aeCutoff_;
-	private int asg1Weight_, asg2Weight_, examWeight_;
+	private String uc; // Private variables of Class. According to java
+						// convention they need to changed to something
+						// meaningfull.
+	private String UN;
+	private float co2;
+	private float co1;
+	private float co4;
+	private float co3;
+	private float co5;
+	private int a1, a2, ex;
 
-	private StudentUnitRecordList recordList_;
+	private StudentUnitRecordList rs;
 
-	public Unit(String unitCode, String unitName, float psCutoff, float crCutoff, float diCutoff, float hdCutoff,
-			float aeCutoff, int asg1Weight, int asg2Weight, int examWeight, StudentUnitRecordList recordList) { // Public
-																												// constructor
-																												// of
-																												// the
-																												// class/
+	public Unit(String UC, String un, float f1, float f2, float f3, float f4, float f5, int i1, int i2, int i3,
+			StudentUnitRecordList rl) { // Public Constructor. Variables need to
+										// be changed according to java
+										// convention
 
-		unitCode_ = unitCode;
-		unitName_ = unitName;
-		psCutoff_ = psCutoff;
-		crCutoff_ = crCutoff;
-		diCutoff_ = diCutoff;
-		hdCutoff_ = hdCutoff;
-		aeCutoff_ = aeCutoff;
-		this.setAssessmentWeights(asg1Weight, asg2Weight, examWeight);
-		recordList_ = recordList == null ? new StudentUnitRecordList() : recordList;
+		uc = UC;
+		UN = un;
+		co2 = f1;
+		co1 = f2;
+		this.co4 = f3;
+		co3 = f4;
+		this.co5 = f5;
+		this.setAssessmentWeights(i1, i2, i3);
+		rs = rl == null ? new StudentUnitRecordList() : rl;
 	}
 
-	public String getUnitCode() { // Method to get unitCode
-		return this.unitCode;
+	public String getUnitCode() { // Method to get Unit Code
+		return this.uc;
 	}
 
-	public String getUnitName() { // Method to get unitName
+	public String getUnitName() { // Method to get Unit Name
 
-		return this.unitName;
+		return this.UN;
 	}
 
-	public void setPsCutoff(float psCutoff) { // Method to set Ps Cutoff
-		this.psCutoff_ = psCutoff;
+	public void setPsCutoff1(float cutoff) { // Method to set Ps cut off. Name
+												// should be changed.
+		this.co2 = cutoff;
 	}
 
-	public float getPsCutoff() { // Method to Get Ps Cutoff
-		return this.psCutoff_;
+	public float getPsCutoff() { // Method to get Ps Cutoff
+		return this.co2;
 	}
 
-	public void setCrCutoff(float crCutoff) { // Method to set Cr Cutoff
-		this.crCutoff_ = crCutoff;
+	public void setCrCutoff(float cutoff) { // Method to set Cr Cutoff
+		this.co1 = cutoff;
 	}
 
-	public float getCrCutoff() { // Method to get Cr Cutoff
-		return this.crCutoff_;
+	public float getCrCutoff() { // Method to get Cr cutoff
+		return this.co1;
 	}
 
-	public void setDiCutoff(float diCutoff) { // Method to set Di Cutoff
-		this.diCutoff_ = diCutoff;
+	public void setDiCutoff(float cutoff) { // Method to set Di Cutoff
+		this.co4 = cutoff;
 	}
 
 	public float getDiCuttoff() { // Method to get Di Cutoff
-		return this.diCutoff_;
+		return this.co4;
 	}
 
-	// Repeat so Commenting Out
-	// public void setHdCutoff(float cutoff) {
-	// this.co3 = cutoff;
-	// }
+	public void HDCutoff(float cutoff) { // This is a redundent Method
+		this.co3 = cutoff;
+	}
 
-	public void setHdCutoff(float hdCutoff) { // Method to set Hd Cutoff
-		this.hdCutoff_ = hdCutoff;
+	public void setHdCutoff(float cutoff) { // Method to set HD Cutoff
+		this.co3 = cutoff;
 	}
 
 	public float getHdCutoff() { // Method to get Hd Cutoff
-		return this.hdCutoff_;
+		return this.co3;
 
 	}
 
-	public void setAeCutoff(float aeCutoff) { // Method to set Ae Cutoff
-		this.aeCutoff_ = aeCutoff;
+	public void setAeCutoff(float cutoff) { // Method to set Ae Cutoff
+		this.co5 = cutoff;
 	}
 
 	public float getAeCutoff() { // Method to get Ae Cutoff
-		return this.aeCutoff_;
+		return this.co5;
 	}
 
-	public void addStudentRecord(IStudentUnitRecord studentRecord) { // Method
-																		// to
-																		// add
-																		// student
-																		// record
-		recordList_.add(studentRecord);
+	public void addStudentRecord(IStudentUnitRecord record) { // Method to add
+																// Student Code
+		rs.add(record);
 	}
 
-	public IStudentUnitRecord getStudentRecord(int studentId) { // Method to get
-																// student
-																// record
-		for (IStudentUnitRecord studentRecord : recordList_) {
-			if (studentRecord.getStudentId() == studentId)
-				return studentRecord;
+	public IStudentUnitRecord getStudentRecord(int studentID) { // Method to get
+																// Student
+																// Record
+		for (IStudentUnitRecord r : rs) {
+			if (r.getStudentID() == studentID)
+				return r;
 		}
 		return null;
 	}
 
-	public StudentUnitRecordList listStudentRecords() { // Method to get student
-														// record list
-		return recordList_;
+	public StudentUnitRecordList listStudentRecords() { // Method to get Student
+														// List
+		return rs;
 	}
 
 	@Override
-	public int getAsg1Weight() { // Method to get Asg1 Weight
-		return asg1Weight_;
+	public int getAsg1Weight() { // Method to get Asg 1 Weight
+		return a1;
 	}
 
 	@Override
-	public int getAsg2Weight() { // Method to get Asg2 Weight
-		return asg2Weight_;
+	public int getAsg2Weight() { // Method to get Asg 2 Weight
+		return a2;
 	}
 
 	@Override
 	public int getExamWeight() { // Method to get exam Weight
-		return examWeight_;
+		return ex;
 	}
 
 	@Override
-	public void setAssessmentWeights(int asg1Weight, int asg2Weight, int examWeight) { // Method
-																						// to
-																						// set
-																						// Weight
-																						// of
-																						// asignments
-																						// and
-																						// exam
-		if (asg1Weight < 0 || asg1Weight > 100 || asg2Weight < 0 || asg2Weight > 100 || examWeight < 0
-				|| examWeight > 100) {
+	public void setAssessmentWeights(int a1, int a2, int ex) { // Method to set
+																// Asg Weights
+		if (a1 < 0 || a1 > 100 || a2 < 0 || a2 > 100 || ex < 0 || ex > 100) {
 			throw new RuntimeException("Assessment weights cant be less than zero or greater than 100");
 		}
-		if (asg1Weight + asg2Weight + examWeight != 100) {
+		if (a1 + a2 + ex != 100) {
 			throw new RuntimeException("Assessment weights must add to 100");
 		}
-		this.asg1Weight_ = asg1Weight;
-		this.asg2Weight_ = asg2Weight;
-		this.examWeight_ = examWeight;
+		this.a1 = a1;
+		this.a2 = a2;
+		this.ex = ex;
 	}
 
 	private void setCutoffs(float ps, float cr, float di, float hd, float ae) { // Method
@@ -183,31 +173,28 @@ public class Unit implements IUnit {
 			throw new RuntimeException("DI cutoff must be less than HD cutoff");
 		}
 
-	}
+	} // End of method to set Cutoffs
 
-	public String getGrade(float asg1Mark, float asg2Mark, float examMark) { // Method
-																				// to
-																				// get
-																				// Grades
-		float total = asg1Mark + asg2Mark + examMar;
+	public String getGrade(float f1, float f2, float f3) { // Method to get
+															// Grade
+		float t = f1 + f2 + f3;
 
-		if (asg1Mark < 0 || asg1Mark > asg1Weight_ || asg2Mark < 0 || asg2Mark > asg2Weight_ || examMark < 0
-				|| examMark > examWeight_) {
+		if (f1 < 0 || f1 > a1 || f2 < 0 || f2 > a2 || f3 < 0 || f3 > ex) {
 			throw new RuntimeException("marks cannot be less than zero or greater than assessment weights");
 		}
 
-		if (total < aeCutoff_) {
+		if (t < co5) {
 			return "FL";
-		} else if (total < psCutoff_)
+		} else if (t < co2)
 			return "AE";
-		else if (total < crCutoff_)
+		else if (t < co1)
 			return "PS";
-		else if (total < diCutoff_)
+		else if (t < co4)
 			return "CR";
-		else if (total < hdCutoff_)
+		else if (t < co3)
 			return "DI";
 		else
 			return "HD";
-	}
+	} // End of Method get Gades
 
 }

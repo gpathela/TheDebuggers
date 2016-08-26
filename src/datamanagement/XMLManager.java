@@ -24,52 +24,54 @@ import org.jdom.JDOMException;
 
 // Start of XmlManager Class
 
-public class XmlManager {
-	private static XmlManager xmlManager = null; // Declaring and initiating
-													// private static XmlManager
-													// type variable
-	private Document document; // Declaring variable document of Type Document
+public class XMLManager {
+	private static XMLManager self = null; // Private variables . They should be
+											// more intutive
 
-	public static XmlManager getXml() { // Get Method for returning xmlManager
-										// value
-		if (xmlManager == null) {
-			xmlManager = new XmlManager();
-		}
-		return xmlManager;
-	} // End of getXml method
+	private Document doc;
 
-	private XmlManager() { // Private Constructor of class
-		initialize(); // Calling initialize method
-	} // End of private constructor
+	public static XMLManager getXML() { // Method to get XML
+		if (self == null)
+			self = new XMLManager();
+		return self;
+	}
 
-	public void initialize() { // Initialize method
-		String string = AppProperties.getInstance().getProperties().getProperty("XMLFILE");
+	private XMLManager() { // Private Constructor
+		init();
+
+	}
+
+	public void init() { // Method init
+		String s = AppProperties.getInstance().getProperties().getProperty("XMLFILE");
 		try {
-			SAXBuilder saxBuilder = new SAXBuilder();
-			saxBuilder.setExpandEntities(true);
-			document = saxBuilder.build(string);
-		} catch (JDOMException jdomException) {
-			System.err.printf("%s", "DBMD: XmlManager : initialize : caught JDOMException\n");
-			throw new RuntimeException("DBMD: XmlManager : initialize : JDOMException");
-		} catch (IOException ioException) {
-			System.err.printf("%s", "DBMD: XmlManager : initialize : caught IOException\n");
-			throw new RuntimeException("DBMD: XmlManager : initialize : IOException");
+			SAXBuilder b = new SAXBuilder();
+			b.setExpandEntities(true);
+			doc = b.build(s);
 		}
-	} // End of initialize method
 
-	public Document getDocument() { // Get method with return type of Document
-		return document;
-	} // End of getDocument method
+		catch (JDOMException e) {
+			System.err.printf("%s", "DBMD: XMLManager : init : caught JDOMException\n");
+			throw new RuntimeException("DBMD: XMLManager : init : JDOMException");
+		} catch (IOException e) {
+			System.err.printf("%s", "DBMD: XMLManager : init : caught IOException\n");
 
-	public void saveDocument() { // saveDocument method with return type of void
-		String xmlFile = AppProperties.getInstance().getProperties().getProperty("XMLFILE");
-		try (FileWriter fileWriter = new FileWriter(xmlFile)) {
-			XMLOutputter xmlOutputter = new XMLOutputter(Format.getPrettyFormat());
-			xmlOutputter.output(document, fileWriter);
-			fileWriter.close();
-		} catch (IOException ioException) {
-			System.err.printf("%s\n", "DBMD : XmlManager : saveDocument : Error saving XML to " + xmlFile);
-			throw new RuntimeException("DBMD: XmlManager : saveDocument : error writing to file");
+			throw new RuntimeException("DBMD: XMLManager : init : IOException");
 		}
-	} // End of saveDocument Method
+	}
+
+	public Document getDocument() {	Method get Document 
+		return doc;
+	}
+
+	public void saveDocument() { // Method to save Document
+		String xmlfile = AppProperties.getInstance().getProperties().getProperty("XMLFILE");
+		try (FileWriter fout = new FileWriter(xmlfile)) {
+			XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat());
+			outputter.output(doc, fout);
+			fout.close();
+		} catch (IOException ioe) {
+			System.err.printf("%s\n", "DBMD : XMLManager : saveDocument : Error saving XML to " + xmlfile);
+			throw new RuntimeException("DBMD: XMLManager : saveDocument : error writing to file");
+		}
+	}
 }

@@ -17,50 +17,51 @@ package datamanagement;
 
 // Start of StudentUnitRecordProxy Class
 public class StudentUnitRecordProxy implements IStudentUnitRecord {
-	private Integer studentId_; // Class Private Variables
-	private String unitCode_;
-	private StudentUnitRecordManager studentUnitRecordManager_;
+	private Integer studentID; // Private variables. According to Convention we
+								// can add _ in the end
+	private String unitCode;
+	private StudentUnitRecordManager mngr;
 
-	public StudentUnitRecordProxy(Integer studentId, String unitCode) { // Public
-																		// Constructor
-		this.studentId_ = studentId;
-		this.unitCode_ = unitCode;
-		this.studentUnitRecordManager_ = StudentUnitRecordManager.instance();
-	}
+	public StudentUnitRecordProxy(Integer id, String code) { // Public
+																// Constructor
+		this.studentID = id;
+		this.unitCode = code;
+		this.mngr = StudentUnitRecordManager.instance();
+	} // End of Constructor
 
-	public Integer getStudentId() { // Method to get student Id
-		return studentId_;
-	} // End of method to get Student Id
+	public Integer getStudentID() { // Method to get Student Id
+		return studentID;
+	} // End of method to get student Id
 
 	public String getUnitCode() { // Method to get Unit Code
-		return unitCode_;
-	} // End of method to get unitCode
+		return unitCode;
+	} // End of method to get Unit Code
 
-	public void setAsg1(float mark) { // Method to set marks of assignment 1
-		studentUnitRecordManager_.getStudentUnitRecord(studentID, unitCode).setAsg1(mark);
-	}
+	public void setAsg1(float mark) { // Method to set Marks of Assignment 1
+		mngr.getStudentUnitRecord(studentID, unitCode).setAsg1(mark);
+	} // End of Method to set Marks of Assignment 1
 
-	public float getAsg1() { // Method to get marks of assignment 1
-		return studentUnitRecordManager_.getStudentUnitRecord(studentID, unitCode).getAsg1();
-	}
+	public float getAsg1() { // Method to get Marks of Assignment 1
+		return mngr.getStudentUnitRecord(studentID, unitCode).getAsg1();
+	} // End of Method to get Marks of Assignment 1
 
-	public void setAsg2(float mark) { // Method to set marks of assignment 2
-		studentUnitRecordManager_.getStudentUnitRecord(studentID, unitCode).setAsg2(mark);
-	}
+	public void setAsg2(float mark) { // Method to set Marks of Assignment 2
+		mngr.getStudentUnitRecord(studentID, unitCode).setAsg2(mark);
+	} // End of Method to set Marks of Assignment 2
 
-	public float getAsg2() { // Method to get marks of assignment 2
-		return studentUnitRecordManager_.getStudentUnitRecord(studentID, unitCode).getAsg2();
-	}
+	public float getAsg2() { // Method to get Marks of Assignment 2
+		return mngr.getStudentUnitRecord(studentID, unitCode).getAsg2();
+	} // Method to get Marks of Assignment 2
 
-	public void setExam(float mark) { // Method to set marks of exam
-		studentUnitRecordManager_.getStudentUnitRecord(studentID, unitCode).setExam(mark);
-	}
+	public void setExam(float mark) { // Method to set Marks of Exam
+		mngr.getStudentUnitRecord(studentID, unitCode).setExam(mark);
+	} // End of Method to set Marks of Exam
 
-	public float getExam() { // Method to get marks of exam
-		return studentUnitRecordManager_.getStudentUnitRecord(studentID, unitCode).getExam();
-	}
+	public float getExam() { // Method to get Marks of Exam
+		return mngr.getStudentUnitRecord(studentID, unitCode).getExam();
+	} // End of Method to get Marks of Exam
 
-	public float getTotal() { // Method to get total marks
-		return studentUnitRecordManager_.getStudentUnitRecord(studentID, unitCode).getTotal();
-	}
+	public float getTotal() { // Method to get Total Marks
+		return mngr.getStudentUnitRecord(studentID, unitCode).getTotal();
+	} // End of Method to get Total Marks
 }
