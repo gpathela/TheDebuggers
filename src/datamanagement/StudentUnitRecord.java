@@ -14,7 +14,9 @@ package datamanagement;
 */
 
 /*
-*
+*StudentUnitRecord gets student Id, unit code, assignment1 weight, assignment2 weight 
+*and sets their weights to their assigned variables
+*and sets exam, gets exam and calculates total 
 */
 
 public class StudentUnitRecord implements IStudentUnitRecord {
