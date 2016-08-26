@@ -14,7 +14,8 @@ package datamanagement;
  */
 
 /*
-*
+*StudentUnitRecordManager creates an instance
+*gets StudentUnitRecord, creates StudentUnitRecord and saves StudentUnitRecord
 */
 
 import java.util.List;
