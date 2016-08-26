@@ -14,7 +14,9 @@ package datamanagement;
  */
 
 /*
-*StudentProxy implements IStudent
+*StudentProxy gets student ID, sirst name and last name
+*sets the student ID, sirst name and last name
+*and adds unit record, gets unit record and gets unit records
 */
 
 public class StudentProxy implements IStudent { //StudentProxy implementing IStudent
