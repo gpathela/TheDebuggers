@@ -18,7 +18,7 @@ public class StudentManager{
 	/** Declare and initialize the variable for the class
 		with private visibility */
     private static StudentManager self = null; // Declare and initialize the variable self to null 
-	private StudentMap studentMap_;	//Change the private variable from sm to studentMap_
+	private StudentMap sm;	//need to change the private variable from sm to studentMap_
 	private java.util.HashMap<String, StudentMap> um;
 	
 	/** An instance of the StudentManager class can use the get method to return itself */
@@ -30,12 +30,12 @@ public class StudentManager{
 	
 	/** The no-args constructor is used to create an object of an StudentManager */
 	private StudentManager(){
-		studentMap_ = new StudentMap();
+		sm = new StudentMap();
         um = new java.util.HashMap<>();
 	}// End of the no-arg constructor
 	
     public IStudent getStudent(Integer id){
-		IStudent is = studentMap_.get(id);
+		IStudent is = sm.get(id);
 			return is != null ? is : createStudent(id);
     }
 

@@ -18,15 +18,16 @@ package datamanagement;
 * as abbreviations and acronyms should not be uppercase
 */
 public class ListStudentsCTL {		//Start of the class ListStudentsCTL
-    private UnitManager unitManager_;
+    private UnitManager um; //need to change variable from um to unitManager_
+
 	/** Construst a default ListStudentsCTL object*/
 	public ListStudentsCTL() {		
-      unitManager_ = UnitManager.UM();
+      um = UnitManager.UM();
 	}// End of the no-arg constructor
 	
     public void listUnits(IUnitLister lister){	//Start of the method listUnits
 	  lister.clearUnits();
-	  UnitMap units = unitManager_.getUnits();
+	  UnitMap units = um.getUnits();
       for (String s : units.keySet())
           lister.addUnit(units.get(s));
 	  }//End of the method listUnits

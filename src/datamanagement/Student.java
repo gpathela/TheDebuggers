@@ -10,22 +10,22 @@ package datamanagement;
 * @version 1.3
 * 
 *
-* Start of Student class. The main purpose of this class is to get or set the name, ID and unit record of the student. I made some changes 
+* Start of Student class. The main purpose of this class is to get or set the name, ID and unit record of the student.need to make some changes 
 * in the variable name as from fn to firstName, ln to lastName and su to studentUnit.
 */
 
 public class Student implements IStudent { // The Student class implements IStudent
     private Integer id; 	
-	private String firstName; //Declare First name to be an integer variable
-    private String lastName; // Declare Last name to be an integer variable
-	private StudentUnitRecordList studentUnit;
+	private String fn; //Declare First name to be an integer variable. variable should be firstName instead of fn
+    private String ln; // Declare Last name to be an integer variable. variable should be lastName instead of ln
+	private StudentUnitRecordList su; //variable should be studentUnit instead of su
 	
 	/** Construct an Student object with the specified attribute. */
-	public Student(int id, String firstName, String lastName, StudentUnitRecordList studentUnit ){
+	public Student(int id, String fn, String ln, StudentUnitRecordList su ){
 		this.id = id; 
-		this.firstName = firstName;
-        this.lastName = lastName;
-		this.studentUnit == null ? new StudentUnitRecordList() : studentUnit;
+		this.fn = fn;
+        this.ln = ln;
+		this.su == null ? new StudentUnitRecordList() : su;
 	}
 	
 	/** Return ID */
@@ -35,31 +35,31 @@ public class Student implements IStudent { // The Student class implements IStud
 	
 	/** Return First Name */
 	public String getFirstName() { 
-		return firstName; 
+		return fn; 
 	}
 
 	/** Set a new First Name */
-    public void setFirstName(String firstName){ 
-		this.firstName = firstName;
+    public void setFirstName(String fn){ 
+		this.fn = fn;
 	}
 	
 	/** Return Last Name */
 	public String getLastName(){ 
-		return lastName; 
+		return ln; 
 	}
 	
 	/** Set a new Last Name */
-    public void setLastName(String lastName){ 
-		this.lastName = lastName;
+    public void setLastName(String ln){ 
+		this.ln = ln;
 	}
 
 	/** Set a new unit record*/
 	public void addUnitRecord(IStudentUnitRecord record){
-		studentUnit.add(record); 
+		su.add(record); 
 	}
 	
     public IStudentUnitRecord getUnitRecord(String unitCode){
-		for (IStudentUnitRecord r : studentUnit) 
+		for (IStudentUnitRecord r : su) 
 			if ( r.getUnitCode().equals(unitCode)) 
 				return r; 
 
@@ -68,6 +68,6 @@ public class Student implements IStudent { // The Student class implements IStud
 	}
 
 	public StudentUnitRecordList getUnitRecords(){ 
-		return studentUnit; 
+		return su; 
 	}
 }//End of Student class
