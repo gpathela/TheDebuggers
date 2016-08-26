@@ -1,5 +1,5 @@
 /**
- * StudentUnitRecord implements IStudentUnitRecord
+ * Specifying the name of the package in which the classes are
  */
 package datamanagement;
 
@@ -14,8 +14,8 @@ package datamanagement;
  */
 public class StudentUnitRecord implements IStudentUnitRecord {
 
-    private Integer sid; //sid is declared as a private integer
-    private String uc; //uc is declared as a private string
+    private Integer sid; //sid can be changed to studentId //sid is declared as a private integer
+    private String uc; //uc can be changed to unitCode //uc is declared as a private string
     private float a1, a2, ex; //a1, a2 and ex are declared as private floating points               
 
     public StudentUnitRecord(Integer id, String code, float asg1, float asg2, float exam) { //sets the parameters for StudentUnitRecord
@@ -56,12 +56,12 @@ public class StudentUnitRecord implements IStudentUnitRecord {
 
     }
 
-    public float getAsg2() { //,ethod for getAsg2
+    public float getAsg2() { //method for getAsg2
         return a2; //returns the value of a2
     }
 
     public void setExam(float ex) {
-        ex as an floating point argument for setExam    {
+        ex as an floating point argument for setExam {
             if (ex < 0 || ex > UnitManager.UM().getUnit(uc).getExamWeight()) { //checking condition if (ex < 0 || ex > UnitManager.UM().getUnit(uc).getExamWeight())
                 /**
                  * Exception Handling

@@ -1,5 +1,5 @@
 /**
- * crating instance of StudentUnitRecordManager
+ * Specifying the name of the package in which the classes are
  */
 package datamanagement;
 
@@ -18,9 +18,9 @@ import org.jdom.*;
 public class StudentUnitRecordManager { //creating class StudentUnitRecordManager
 
     private static StudentUnitRecordManager s = null; //null value for s in StudentUnitRecordManager
-    private StudentUnitRecordMap rm; //declaring StudentUnitRecordMap with rm as private
-    private java.util.HashMap<String, StudentUnitRecordList> ur; //declaring java.util.HashMap<String,StudentUnitRecordList> with ur as private
-    private java.util.HashMap<Integer, StudentUnitRecordList> sr; //declaring java.util.HashMap<Integer,StudentUnitRecordList> with sr as private
+    private StudentUnitRecordMap rm; //rm can be changed to recordMap //declaring StudentUnitRecordMap with rm as private
+    private java.util.HashMap<String, StudentUnitRecordList> ur; //ur can be changed to unitRecordList //declaring java.util.HashMap<String,StudentUnitRecordList> with ur as private
+    private java.util.HashMap<Integer, StudentUnitRecordList> sr; //sr can be changed to studentUnitRecordListdeclaring java.util.HashMap<Integer,StudentUnitRecordList> with sr as private
 
     public static StudentUnitRecordManager instance() { //creating an instance of StudentUnitRecordManager
         if (s == null) {

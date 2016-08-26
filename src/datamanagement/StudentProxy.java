@@ -1,5 +1,5 @@
 /**
- * StudentProxy implements IStudent
+ * Specifying the name of the package in which the classes are
  */
 package datamanagement;
 
@@ -14,13 +14,13 @@ package datamanagement;
  */
 public class StudentProxy implements IStudent { //StudentProxy implementing IStudent
 
-    private Integer I; //integer I is private
+    private Integer I; //integer I is private and can be changed into i
     private String l; //string l is private
 
-    private String Il; //string Il is declared private
+    private String Il; //string Il is declared private and can be changed to il
     private StudentManager lI; //Student Manager lI is declared private
 
-    public StudentProxy(Integer id, String fn, String Il) { //id, fn and Il are passed as arguments as integer, string and string respectively
+    public StudentProxy(Integer id, String fn, String Il) { //String Il can be changed to il //id, fn and Il are passed as arguments as integer, string and string respectively
         this.I = id; //id is passed to I
         this.l = fn; //fn is passed to I
 

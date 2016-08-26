@@ -1,5 +1,5 @@
 /**
- * StudentUnitRecordList interface extends ArrayList
+ * Specifying the name of the package in which the classes are
  */
 package datamanagement;
 

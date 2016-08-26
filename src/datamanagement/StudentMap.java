@@ -1,5 +1,5 @@
 /**
- * StudentMap interface extends the HashMap interface
+ * Specifying the name of the package in which the classes are
  */
 package datamanagement;
 
