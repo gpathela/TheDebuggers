@@ -12,5 +12,9 @@ package datamanagement;
 *@due date 26.08.2016
 *@version 1.3
  */
+
+/*
+*
+*/
 public class StudentMap extends java.util.HashMap<Integer, IStudent> { //StudentMap interface extends HashMap interface
 }
