@@ -15,7 +15,7 @@ package datamanagement;
 */
 
 public class Student implements IStudent { // The student class implements IStudent
-    private int id; 	// change datatype from Integer to int
+    private Integer id; 	
 	private String firstName; //Declare First name to be an integer variable
     private String lastName; // Declare Last name to be an integer variable
 	private StudentUnitRecordList studentUnit;
