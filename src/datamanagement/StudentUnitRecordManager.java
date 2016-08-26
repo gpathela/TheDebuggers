@@ -54,7 +54,7 @@ public class StudentUnitRecordManager { //creating class StudentUnitRecordManage
      */
     private IStudentUnitRecord createStudentUnitRecord(Integer uid, String sid) {
         IStudentUnitRecord ir; //passing ir to IStudentUnitRecord
-        for (Element el : (List<Element>) XMLManager.getXML().getDocument().getRootElement().getChild("studentUnitRecordTable").getChildren("record")) { //for loop
+        for (Element el : (List<Element>) XMLManager.getXML().getDocument().getRootElement().getChild("studentUnitRecordTable").getChildren("record")) { //for loop and XMLManager can be changed to XmlManager
             if (uid.toString().equals(el.getAttributeValue("sid")) && sid.equals(el.getAttributeValue("uid"))) { //condition checking
                 ir = new StudentUnitRecord(new Integer(el.getAttributeValue("sid")), el.getAttributeValue("uid"), new Float(el.getAttributeValue("asg1")).floatValue(), new Float(el.getAttributeValue("asg2")).floatValue(), new Float(el.getAttributeValue("exam")).floatValue());
                 rm.put(ir.getStudentID().toString() + ir.getUnitCode(), ir);
