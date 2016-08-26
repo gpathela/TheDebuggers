@@ -86,4 +86,4 @@ public class StudentUnitRecord implements IStudentUnitRecord {
     public float getTotal() { //method for getTotal
         return a1 + a2 + ex; //returns the value of (a1 + a2 + ex)
     }
-}
+} //End of StudentUnitRecord
