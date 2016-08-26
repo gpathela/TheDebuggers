@@ -13,11 +13,10 @@ package datamanagement;
 *@version 1.3
  */
 
-/*
+ /*
 *StudentUnitRecordManager creates an instance
 *gets StudentUnitRecord, creates StudentUnitRecord and saves it
-*/
-
+ */
 import java.util.List;
 import org.jdom.*;
 
@@ -32,7 +31,7 @@ public class StudentUnitRecordManager { //creating class StudentUnitRecordManage
         if (s == null) {
             s = new StudentUnitRecordManager(); //condition checking if (s == null ) s = new StudentUnitRecordManager()
         }
-        return s; ////returns the value of s
+        return s; //returns the value of s
     }
 
     private StudentUnitRecordManager() { //declaring StudentUnitRecordManager as private
@@ -44,7 +43,7 @@ public class StudentUnitRecordManager { //creating class StudentUnitRecordManage
     /**
      * Get method for getStudentUnitRecord
      */
-    public IStudentUnitRecord getStudentUnitRecord(Integer studentID, String unitCode) {  //passing arguments studentID as an integer and unitCode as a string
+    public IStudentUnitRecord getStudentUnitRecord(Integer studentID, String unitCode) { //passing arguments studentID as an integer and unitCode as a string
         IStudentUnitRecord ir = rm.get(studentID.toString() + unitCode);
         return ir != null ? ir : createStudentUnitRecord(studentID, unitCode); //checking condition and creating StudentUnitRecord
     }
@@ -76,25 +75,23 @@ public class StudentUnitRecordManager { //creating class StudentUnitRecordManage
         recs = new StudentUnitRecordList(); //creating new StudentUnitRecordList()
         for (Element el : (List<Element>) XMLManager.getXML().getDocument().getRootElement().getChild("studentUnitRecordTable").getChildren("record")) { //for loop
             if (unitCode.equals(el.getAttributeValue("uid"))) {
-                recs.add(new StudentUnitRecordProxy(new Integer(el.getAttributeValue("sid")), el.getAttributeValue("uid"))); //checking condition
+                recs.add(new StudentUnitRecordProxy(new Integer(el.getAttributeValue("sid")), el.getAttributeValue("uid"))); //checking condition 
             }
         }
-        if (recs.size() > 0) //condition checking if ( recs.size() > 0 ){
-        {
+        if (recs.size() > 0) { //condition checking if ( recs.size() > 0 )
             ur.put(unitCode, recs); // be careful - this could be empty
         }
+        return recs; //return the value of recs
     }
-    return recs ; //return the value of recs
-} //End of StudentUnitRecordManager
 
-public StudentUnitRecordList getRecordsByStudent(Integer studentID) { //getting RecordsByStudent as integer studentID
+    public StudentUnitRecordList getRecordsByStudent(Integer studentID) { //getting RecordsByStudent as integer studentID
         StudentUnitRecordList recs = sr.get(studentID); //get the studentID and pass to recs
-        if (recs != null) {
-            return recs; //checking condition and returning recs
+        if (recs != null) { //checking condition
+            return recs; //returning recs
         }
         recs = new StudentUnitRecordList(); //creating new StudentUnitRecordList()
         for (Element el : (List<Element>) XMLManager.getXML().getDocument().getRootElement().getChild("studentUnitRecordTable").getChildren("record")) { //for loop
-            if (studentID.toString().equals(el.getAttributeValue("sid"))) //checking condition if (studentID.toString().equals(el.getAttributeValue("sid"))) {
+            if (studentID.toString().equals(el.getAttributeValue("sid"))) { //checking condition if (studentID.toString().equals(el.getAttributeValue("sid"))) 
                 recs.add(new StudentUnitRecordProxy(new Integer(el.getAttributeValue("sid")), el.getAttributeValue("uid")));
             }
         }
@@ -104,9 +101,9 @@ public StudentUnitRecordList getRecordsByStudent(Integer studentID) { //getting 
         return recs; //return the value of recs
     }
 
-    public void saveRecord(IStudentUnitRecord irec) { //save record 
+    public void saveRecord(IStudentUnitRecord irec) { //save record
         for (Element el : (List<Element>) XMLManager.getXML().getDocument().getRootElement().getChild("studentUnitRecordTable").getChildren("record")) { //for loop
-            if (irec.getStudentID().toString().equals(el.getAttributeValue("sid")) && irec.getUnitCode().equals(el.getAttributeValue("uid"))) { //condition checking
+            if (irec.getStudentID().toString().equals(el.getAttributeValue("sid")) && irec.getUnitCode().equals(el.getAttributeValue("uid"))) { //checking condition
                 el.setAttribute("asg1", new Float(irec.getAsg1()).toString());
 
                 el.setAttribute("asg2", new Float(irec.getAsg2()).toString());
@@ -115,7 +112,6 @@ public StudentUnitRecordList getRecordsByStudent(Integer studentID) { //getting 
                 return; //return value
             }
         }
-
         /**
          * Exception Handling
          */
