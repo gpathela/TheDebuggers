@@ -18,4 +18,4 @@ package datamanagement;
 */
 
 public class StudentUnitRecordMap extends java.util.HashMap<String, IStudentUnitRecord> { //StudentUnitRecordMap extending HashMap
-}
+} //End of StudentUnitRecordMap
