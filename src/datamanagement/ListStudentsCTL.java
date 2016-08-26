@@ -27,6 +27,6 @@ public class ListStudentsCTL {		//Start of the class ListStudentsCTL
       lister.clearStudents();
       StudentMap students = studentManager_.getStudentsByUnit( unitCode );
       for (Integer id : students.keySet()) 
-	  lister.addStudent(students.get(id));
+		lister.addStudent(students.get(id));
       }
 }//End of the class ListStudentsCTL
