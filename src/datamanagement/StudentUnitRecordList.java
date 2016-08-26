@@ -14,7 +14,7 @@ package datamanagement;
  */
 
 /*
-*
+*StudentUnitRecordList extends the properties of Arraylist interface
 */
 
 public class StudentUnitRecordList extends java.util.ArrayList<IStudentUnitRecord> { //StudentUnitRecordList extending ArrayList
