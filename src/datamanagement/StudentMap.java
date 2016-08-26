@@ -18,4 +18,4 @@ package datamanagement;
 */
 
 public class StudentMap extends java.util.HashMap<Integer, IStudent> { //StudentMap interface extends HashMap interface
-}
+} //End of interface StudentMap
