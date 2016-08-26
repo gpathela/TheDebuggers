@@ -10,7 +10,8 @@ package datamanagement;
 * @version 1.3
 * 
 *
-* Start of Student class. The main purpose of this class is to get or set the name, ID and unit record of the student.
+* Start of Student class. The main purpose of this class is to get or set the name, ID and unit record of the student. I made some changes 
+* in the variable name as from fn to firstName, ln to lastName and su to studentUnit.
 */
 
 public class Student implements IStudent { // The student class implements IStudent
