@@ -11,7 +11,12 @@ package datamanagement;
 *@lecturer Dr Recep Ulusoy
 *@due date 26.08.2016
 *@version 1.3
- */
+*/
+
+/*
+*
+*/
+
 public class StudentUnitRecord implements IStudentUnitRecord {
 
     private Integer sid; //sid can be changed to studentId //sid is declared as a private integer

@@ -12,6 +12,11 @@ package datamanagement;
 *@due date 26.08.2016
 *@version 1.3
  */
+
+/*
+*
+*/
+
 public class StudentProxy implements IStudent { //StudentProxy implementing IStudent
 
     private Integer I; //integer I is private and can be changed into i
