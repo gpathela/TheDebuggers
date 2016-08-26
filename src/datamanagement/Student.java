@@ -1,38 +1,79 @@
+/** Specify the package in which the classes resides */
 package datamanagement;
 
-public class Student implements IStudent {
-    private Integer id; private String fn;
-            private String ln;
-private StudentUnitRecordList su;
+/**
+ * @author Ramanpreet Kaur
+ * @course Master of Information Technology
+ * @subject Professional Programming Practice
+ * @instructor Dr Recep Ulusoy
+ * @due date 26.08.2016
+ * @version 1.3
+ * 
+ *
+ *          Start of Student class. The main purpose of this class is to get or
+ *          set the name, ID and unit record of the student.need to make some
+ *          changes in the variable name as from fn to firstName, ln to lastName
+ *          and su to studentUnit.
+ */
 
-public Student( Integer id, String fn, String ln, StudentUnitRecordList su ) { this.id = id; this.fn = fn;
-        this.ln = ln;this.su = 
-        su == null ? new StudentUnitRecordList() : 
-                su;
-}
+public class Student implements IStudent { // The Student class implements
+											// IStudent
+	private Integer id;
+	private String fn; // Declare First name to be an integer variable. variable
+						// should be firstName instead of fn
+	private String ln; // Declare Last name to be an integer variable. variable
+						// should be lastName instead of ln
+	private StudentUnitRecordList su; // variable should be studentUnit instead
+										// of su
 
-    public Integer getID() { return this.id; 
-} public String getFirstName() { 
-return fn; }
+	/** Construct an Student object with the specified attribute. */
+	public Student(int id, String fn, String ln, StudentUnitRecordList su ){
+		this.id = id; 
+		this.fn = fn;
+        this.ln = ln;
+		this.su == null ? new StudentUnitRecordList() : su;
+	}
 
-    public void setFirstName( String firstName ) { 
-this.fn = firstName; }
+	/** Return ID */
+	public int getID() { // Get the ID of a student
+		return this.id;
+	}
 
-public String getLastName() { 
-    return ln; }
-    public void setLastName( String lastName ) { 
+	/** Return First Name */
+	public String getFirstName() {
+		return fn;
+	}
 
-        
-this.ln = lastName; }
+	/** Set a new First Name */
+	public void setFirstName(String fn) {
+		this.fn = fn;
+	}
 
-public void addUnitRecord( IStudentUnitRecord record ) { su.add(record); }
-        public IStudentUnitRecord getUnitRecord( String unitCode ) {
-for ( IStudentUnitRecord r : su ) 
-            if ( r.getUnitCode().equals(unitCode)) 
-return r; 
+	/** Return Last Name */
+	public String getLastName() {
+		return ln;
+	}
 
-return null;
-        
-}
+	/** Set a new Last Name */
+	public void setLastName(String ln) {
+		this.ln = ln;
+	}
 
-public StudentUnitRecordList getUnitRecords() { return su; }}
+	/** Set a new unit record */
+	public void addUnitRecord(IStudentUnitRecord record) {
+		su.add(record);
+	}
+
+	public IStudentUnitRecord getUnitRecord(String unitCode) {
+		for (IStudentUnitRecord r : su)
+			if (r.getUnitCode().equals(unitCode))
+				return r;
+
+		return null;
+
+	}
+
+	public StudentUnitRecordList getUnitRecords() {
+		return su;
+	}
+}// End of Student class
