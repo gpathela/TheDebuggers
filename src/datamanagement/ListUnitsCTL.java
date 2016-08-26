@@ -24,10 +24,10 @@ public class ListStudentsCtl {		//Start of the class ListStudentsCtl
       unitManager_ = UnitManager.UM();
 	}// End of the no-arg constructor
 	
-    public void listUnits(IUnitLister unitlister){	//Start of the method listUnits
-	  unitlister.clearUnits();
+    public void listUnits(IUnitLister lister){	//Start of the method listUnits
+	  lister.clearUnits();
 	  UnitMap units = unitManager_.getUnits();
       for (String s : units.keySet())
-          unitlister.addUnit(units.get(s));
+          lister.addUnit(units.get(s));
 	  }//End of the method listUnits
 }//End of the class ListStudentsCtl

@@ -18,7 +18,7 @@ public class StudentManager{
 	/** Declare and initialize the variable for the class
 		with private visibility */
     private static StudentManager self = null; // Declare and initialize the variable self to null 
-	private StudentMap studentMap_;
+	private StudentMap studentMap_;	//Change the private variable from sm to studentMap_
 	private java.util.HashMap<String, StudentMap> um;
 	
 	/** An instance of the StudentManager class can use the get method to return itself */
