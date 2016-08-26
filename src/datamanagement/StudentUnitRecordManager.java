@@ -15,7 +15,7 @@ package datamanagement;
 
 /*
 *StudentUnitRecordManager creates an instance
-*gets StudentUnitRecord, creates StudentUnitRecord and saves StudentUnitRecord
+*gets StudentUnitRecord, creates StudentUnitRecord and saves it
 */
 
 import java.util.List;
@@ -85,7 +85,7 @@ public class StudentUnitRecordManager { //creating class StudentUnitRecordManage
         }
     }
     return recs ; //return the value of recs
-}
+} //End of StudentUnitRecordManager
 
 public StudentUnitRecordList getRecordsByStudent(Integer studentID) { //getting RecordsByStudent as integer studentID
         StudentUnitRecordList recs = sr.get(studentID); //get the studentID and pass to recs
