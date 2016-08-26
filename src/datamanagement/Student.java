@@ -14,7 +14,7 @@ package datamanagement;
 * in the variable name as from fn to firstName, ln to lastName and su to studentUnit.
 */
 
-public class Student implements IStudent { // The student class implements IStudent
+public class Student implements IStudent { // The Student class implements IStudent
     private Integer id; 	
 	private String firstName; //Declare First name to be an integer variable
     private String lastName; // Declare Last name to be an integer variable
@@ -70,4 +70,4 @@ public class Student implements IStudent { // The student class implements IStud
 	public StudentUnitRecordList getUnitRecords(){ 
 		return studentUnit; 
 	}
-}//End of student class
+}//End of Student class
