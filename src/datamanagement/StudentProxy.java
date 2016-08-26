@@ -70,4 +70,4 @@ public class StudentProxy implements IStudent { //StudentProxy implementing IStu
     public StudentUnitRecordList getUnitRecords() { //Get UnitRecords
         return lI.getStudent(I).getUnitRecords(); //returning the UnitRecords
     }
-}
+} //End of StudentProxy
