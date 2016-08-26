@@ -11,14 +11,13 @@ package datamanagement;
 *@lecturer Dr Recep Ulusoy
 *@due date 26.08.2016
 *@version 1.3
-*/
+ */
 
-/*
+ /*
 *StudentUnitRecord gets student Id, unit code, assignment1 weight, assignment2 weight 
 *and sets their weights to their assigned variables
 *and sets exam, gets exam and calculates total 
-*/
-
+ */
 public class StudentUnitRecord implements IStudentUnitRecord {
 
     private Integer sid; //sid can be changed to studentId //sid is declared as a private integer
@@ -68,7 +67,7 @@ public class StudentUnitRecord implements IStudentUnitRecord {
     }
 
     public void setExam(float ex) {
-        ex as an floating point argument for setExam {
+        ex as an floating point argument for setExam    {
             if (ex < 0 || ex > UnitManager.UM().getUnit(uc).getExamWeight()) { //checking condition if (ex < 0 || ex > UnitManager.UM().getUnit(uc).getExamWeight())
                 /**
                  * Exception Handling

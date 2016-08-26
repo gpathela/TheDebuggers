@@ -13,9 +13,8 @@ package datamanagement;
 *@version 1.3
  */
 
-/*
+ /*
 *StudentUnitRecordMap extends the properties of HashMap
-*/
-
+ */
 public class StudentUnitRecordMap extends java.util.HashMap<String, IStudentUnitRecord> { //StudentUnitRecordMap extending HashMap
 } //End of StudentUnitRecordMap
