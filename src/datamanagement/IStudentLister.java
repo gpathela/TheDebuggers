@@ -7,7 +7,7 @@ package datamanagement;
 *@subject Professional Programming Practice
 *@lecturer Dr Recep Ulusoy
 *@due date 26.08.2016
-*@version 1.3
+*@version 1.4
 *
 *The IStudentLister contains a collection of abstract methods 
 *to allow other classes to implement them. These methods can clear  

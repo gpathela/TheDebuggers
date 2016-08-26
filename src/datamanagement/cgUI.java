@@ -19,11 +19,12 @@ import java.awt.event.KeyEvent;
 *
 *The CgUI class creates a CgUI object and uses a method to initialize components which will
 *be used in the graphical user interface. It has methods to clear the text fields, set the 
-*states of the elements in the interface, add and record students
+*states of the elements in the interface, add and record students. The variable jlabel6 should 
+*be changed to jLabel6 and the class name from cgUI to CgUI.
 */
 
 /** Start of the class AppProperties */
-public class CgUI extends javax.swing.JFrame implements IUnitLister, IStudentLister {
+public class cgUI  extends javax.swing.JFrame implements IUnitLister, IStudentLister {
 	/** Declare and initialize the variables for the class
 		using mainly private visibility. 
 		Do not modify//GEN-BEGIN:variables */
@@ -37,7 +38,7 @@ public class CgUI extends javax.swing.JFrame implements IUnitLister, IStudentLis
 	private javax.swing.JLabel jLabel3;
 	private javax.swing.JLabel jLabel4;
 	private javax.swing.JLabel jLabel5;
-	private javax.swing.JLabel jLabel6;
+	private javax.swing.JLabel jlabel6;
 	private javax.swing.JPanel jPanel1;
 	private javax.swing.JPanel jPanel2;
 	private javax.swing.JPanel jPanel3;
@@ -45,26 +46,26 @@ public class CgUI extends javax.swing.JFrame implements IUnitLister, IStudentLis
 	private javax.swing.JTextField jTextField1;
 	private javax.swing.JTextField jTextField2;
 	private javax.swing.JTextField jTextField3;
-	private CgCtl ctl;
+	private cgCTL ctl;
 	private javax.swing.DefaultComboBoxModel uM;
 	private javax.swing.DefaultComboBoxModel rM;
 	float f1;
 	float f2;
 	float f3;
-	Integer sID;
+	Integer sid;
 	
 	/** The constructor is used to instantiate an object of the class CgUI. 
-		The process uses an object of type CgCtl as parameter, creates two 
+		The process uses an object of type cgCTL as parameter, creates two 
 		objects of type DefaultComboBoxModel, sets the model of the combo box
 		and then sets the text of the label */
-	public CgUI(CgCtl ctl) {
+	public cgUI(cgCTL  ctl) {
 		this.ctl = ctl;
 		uM = new javax.swing.DefaultComboBoxModel(new String[0]);
 		rM = new javax.swing.DefaultComboBoxModel(new String[0]);
 		initComponents();
 		jComboBox1.setModel(uM);
 		jComboBox2.setModel(rM);
-		jLabel6.setText("");
+		jlabel6.setText("");
 	}
 
 	/**
@@ -274,10 +275,10 @@ public class CgUI extends javax.swing.JFrame implements IUnitLister, IStudentLis
 						.addComponent(jLabel5)
 						.addContainerGap(43, Short.MAX_VALUE)));
 		
-		jLabel6 = new JLabel();
-		jLabel6.setText("Error message");
-		jLabel6.setForeground(Color.RED);
-		jLabel6.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		jlabel6 = new JLabel();
+		jlabel6.setText("Error message");
+		jlabel6.setForeground(Color.RED);
+		jlabel6.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		jButton3 = new javax.swing.JButton();
 		
 				jButton3.setText("Save");
@@ -295,7 +296,7 @@ public class CgUI extends javax.swing.JFrame implements IUnitLister, IStudentLis
 					.addGroup(layout.createParallelGroup(Alignment.LEADING)
 						.addGroup(layout.createSequentialGroup()
 							.addContainerGap()
-							.addComponent(jLabel6, GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE))
+							.addComponent(jlabel6, GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE))
 						.addGroup(layout.createSequentialGroup()
 							.addContainerGap()
 							.addGroup(layout.createParallelGroup(Alignment.LEADING, false)
@@ -362,12 +363,12 @@ public class CgUI extends javax.swing.JFrame implements IUnitLister, IStudentLis
 		String cS = (String) jComboBox2.getSelectedItem();
 		if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
 			if (cS.equals((String) jComboBox2.getItemAt(0))) {
-				sID = new Integer(0);
-				ctl.studentSelected(sID);
+				sid = new Integer(0);
+				ctl.studentSelected(sid);
 			} else {
-				sID = new Integer(cS.split("\\s")[0]);
+				sid = new Integer(cS.split("\\s")[0]);
 			}
-			ctl.studentSelected(sID);
+			ctl.studentSelected(sid);
 		}
 	} // End of the jComboBox2ItemStateChanged method.  GEN-LAST:event_jComboBox2ItemStateChanged
 
@@ -384,7 +385,7 @@ public class CgUI extends javax.swing.JFrame implements IUnitLister, IStudentLis
 			jLabel5.setText(s);
 		}
 		catch (RuntimeException re) {
-			jLabel6.setText(re.getMessage());
+			jlabel6.setText(re.getMessage());
 		}
 	} // End of the method jButton3ActionPerformed. GEN-LAST:event_jButton3ActionPerformed
 
@@ -399,10 +400,10 @@ public class CgUI extends javax.swing.JFrame implements IUnitLister, IStudentLis
 
 	/** Start of the method jTextFieldKeyTyped which
 		receives an object of ItemEvent as parameter 
-		an sets the text for jLabel5 and jLabel6 */
+		an sets the text for jLabel5 and jlabel6 */
 	private void jTextFieldKeyTyped(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_jTextField1KeyTyped
 		jLabel5.setText("");
-		jLabel6.setText("");
+		jlabel6.setText("");
 	} // End of the method jTextFieldKeyTyped. GEN-LAST:event_jTextField1KeyTyped
 
 	/** Start of the method jButton2ActionPerformed which
@@ -412,13 +413,13 @@ public class CgUI extends javax.swing.JFrame implements IUnitLister, IStudentLis
 		float asg1 = new Float(jTextField1.getText()).floatValue();
 		float asg2 = new Float(jTextField2.getText()).floatValue();
 		float exam = new Float(jTextField3.getText()).floatValue();
-		jLabel6.setText("");
+		jlabel6.setText("");
 		try {
 			ctl.saveGrade(asg1, asg2, exam);
 			//jButton3ActionPerformed(null);
 		}
 		catch (RuntimeException re) {
-			jLabel6.setText(re.getMessage());
+			jlabel6.setText(re.getMessage());
 		}
 	} // End of the method jButton2ActionPerformed. GEN-LAST:event_jButton2ActionPerformed
 
@@ -435,10 +436,10 @@ public class CgUI extends javax.swing.JFrame implements IUnitLister, IStudentLis
 		uM.addElement(u.getUnitCode());
 	} // End of the method addUnit
 
-	/** Start of the method setState1 which enables the jComboBox1 as well as setting the text for jLabel6 */
+	/** Start of the method setState1 which enables the jComboBox1 as well as setting the text for jlabel6 */
 	public void setState1(boolean b) {
 		jComboBox1.setEnabled(b);
-		jLabel6.setText("");
+		jlabel6.setText("");
 	} // End of the method setState1
 
 	/** Start of the method clearStudents which uses the removeAllElements and addElement methods */
@@ -455,10 +456,10 @@ public class CgUI extends javax.swing.JFrame implements IUnitLister, IStudentLis
 	} // End of the method addStudent
 
 	/** Start of the method setState2 which sets state3 by enabling 
-		jComboBox2 and setting a text for JLabel6 */
+		jComboBox2 and setting a text for jlabel6 */
 	public void setState2(boolean b) {
 		jComboBox2.setEnabled(b);
-		jLabel6.setText("");
+		jlabel6.setText("");
 	} // End of the method setState2
 
 	/** Start of the method setRecord which sets the texts for jTextField 1, 2, 3, and jLabel5 */
@@ -475,7 +476,7 @@ public class CgUI extends javax.swing.JFrame implements IUnitLister, IStudentLis
 		jTextField2.setText("");
 		jTextField3.setText("");
 		jLabel5.setText("");
-		jLabel6.setText("");
+		jlabel6.setText("");
 		jTextField1.setEditable(false);
 		jTextField2.setEditable(false);
 		jTextField3.setEditable(false);

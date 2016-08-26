@@ -15,7 +15,7 @@ package datamanagement;
 *and the list of the all records.
 */
 
-/** Start of the IUnit interface */
+/** Start of the IUnit interface. The getter and setter methods with the off word should be changed to Off */
 public interface IUnit {
     public String getUnitCode(); // Get the unit code
     public String getUnitName(); // Get the unit name 

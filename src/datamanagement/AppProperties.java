@@ -9,7 +9,7 @@ import java.io.*;
 *@subject Professional Programming Practice
 *@lecturer Dr Recep Ulusoy
 *@due date 26.08.2016
-*@version 1.3
+*@version 1.5
 *
 *The AppProperties class is a program that uses private variables to create instances
 *with a no-arg constructor. It has two methods, namely the getInstance, and getProperties
